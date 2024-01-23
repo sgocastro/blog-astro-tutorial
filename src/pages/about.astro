@@ -1,4 +1,15 @@
 ---
+const pageTitle: string = "Sobre mi";
+
+const personalInformation: { [key: string]: string | string[] } = {
+  firstName: "Santiago Matias",
+  lastName: "Castro",
+  occupation: "Frontend developer",
+  hobbies: ["Programar", "Leer", "Jugar videojuegos", "Ver series y peliculas", "Escuchar musica", "Jugar al volleyball"]
+};
+
+const skills: string[] = ["JavaScript", "TypeScript", "React.js", "Astro", "C#", "HTML", "CSS"]; 
+
 
 ---
 
@@ -8,13 +19,26 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Mi sitio en Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
     <a href="/">Home</a>    
-    <h1>About Me</h1>
-    <h2>... and my new Astro site!</h2>
-    <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-    <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+    <h1>{pageTitle}</h1>
+    <h2>... y mi nuevo sitio en Astro</h2>
+    <p>Estoy trabajando con el tutorial sobre Astro. Esta es la segunda página de mi app, y es la primera que escribo por mi mismo!</p>
+    <p>Este sitio se ira actualizando mientras mas avance con el tutorial, asi que mantenganse alertas a mi viaje por Astro!</p>
+    <h2>Ahora si, un poco sobre mí</h2>
+    <p>Mi nombre es {personalInformation.firstName} {personalInformation.lastName}, y soy {personalInformation.occupation}.</p>
+    <p>Algunos de mis hobbies son:</p>
+    <ul>
+      {[...personalInformation.hobbies].map((hobby: string) => (
+        <li>{hobby}</li>
+      ))}
+    </ul>
+    <p>Y estas son algunas de las tecnologias que manejo:</p>
+    <ul>
+      {skills.map((skill: string) => (
+        <li>{skill}</li>
+      ))}
   </body>
 </html>

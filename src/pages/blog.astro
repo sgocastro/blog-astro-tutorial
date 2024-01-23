@@ -1,5 +1,5 @@
 ---
-
+const pageTitle: string = "Mi blog sobre videojuegos";
 ---
 
 <html lang="es-AR">
@@ -8,12 +8,12 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Mi sitio en Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<a href="/">Home</a>
 		<a href="/about">About</a>
-		<h1>Mi blog sobre videojuegos</h1>
+		<h1>{pageTitle}</h1>
     <p>
       En este blog vamos a hablar exclusivamente sobre videojuegos, 
       desde un punto de vista lo mas objetivo posible (a pesar de mis posibles fanatismos) pero poniendo todo el corazón
@@ -23,5 +23,10 @@
       Tal vez mis analisís no salgan a la par de los grandes medios, pero voy a intentar darles una mirada diferente 
       sobre los videojuegos que tanto nos gustan.
     </p>
+    <ul>
+      <li><a href="posts/post-1">Post 1</a></li>
+      <li><a href="posts/post-2">Post 2</a></li>
+      <li><a href="posts/post-3">Post 3</a></li>
+    </ul>
 	</body>
 </html>
